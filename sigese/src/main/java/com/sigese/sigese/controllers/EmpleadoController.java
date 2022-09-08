@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sigese.sigese.models.EmpleadoModel;
 import com.sigese.sigese.services.EmpleadoService;
 
-@RestController
-@RequestMapping("/empleado")
+@RestController  //esta anotación hace que Spring reconozca la clase creada
+@RequestMapping("/empleado")  
 public class EmpleadoController {
     @Autowired
     EmpleadoService empleadoService;
 
-    @GetMapping()
+    @GetMapping() //esta anotación le indica al navegador que método es el que debe usar, se debe mapear con path
     public ArrayList<EmpleadoModel> obtenerEmpleado(){
         return empleadoService.obtenerEmpleado();
     }
