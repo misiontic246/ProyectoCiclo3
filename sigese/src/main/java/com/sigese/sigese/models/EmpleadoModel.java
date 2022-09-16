@@ -13,12 +13,13 @@ import java.util.List;
 
 
 
-
+//Crear anotacion para la creacion de la tabla en la base de datos
 @Entity
 @Table(name = "empleados")
 public class EmpleadoModel {
 
     //Creando atributos para la base de datos
+    //Creando el id para la base de datos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
