@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SigeseApplication<sigese>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.sigese.sigese.SigeseApplication",
+            "projectName": "sigese",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
