@@ -33,4 +33,19 @@ public class CargoEmpleadoServicio {
         return cargos;
     }
 
+    //Crear cargo de empleados
+    public String create( CargoEmpleadoModelo cargo) {
+        String message = "";
+        Session session = createSession();
+        try {
+        session.persist(cargo);
+        session.getTransaction().commit();
+        message = "Cargo creado con exito";
+        } catch (Exception e) {
+            message = e.getMessage();
+        }
+        session.close();
+        return message;
+    }
+
 }
