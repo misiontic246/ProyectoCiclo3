@@ -18,6 +18,8 @@ public class CargoEmpleadoModelo {
         this.id = id;
         this.cargo_empleado = cargo_empleado;
     }
+    public CargoEmpleadoModelo() {
+    }
 
     //Consultores y modificadores
     public int getId() {
