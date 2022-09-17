@@ -39,5 +39,28 @@ public class EmpleadoServico {
         session.close();
         return empleado;
     }
+    //Crear empleado
+    public String create(EmpleadoModelo empleado) {
+        String message = "";
+        Session session = createSession();
+        try {
+        session.persist(empleado);
+        session.getTransaction().commit();
+        message = "Empleado creado con exito";
+        } catch (Exception e) {
+            message = e.getMessage();
+        }
+        session.close();
+        return message;
+    }
+    //Buscar empleado por numero de documento
+    public List<EmpleadoModelo> getByIdent(String identificacion ) throws Exception {
+        Session session = createSession();
+        List<EmpleadoModelo> objEmpleado = session
+                .createQuery("from EmpleadoModelo where identificacion = :ident", EmpleadoModelo.class)
+                .setParameter("ident", identificacion).list();
+        session.close();
+        return objEmpleado;
+    }
 
 }

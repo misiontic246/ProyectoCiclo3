@@ -13,6 +13,7 @@ public class EmpleadoModelo {
     //Creando el id para la base de datos
     @Id
     private int id;
+    private int id_cargo_empleado;
     private String tipo_documemto;
     private String identificacion;
     private String primer_nombre;
@@ -23,10 +24,15 @@ public class EmpleadoModelo {
     private String estado_empleado;
 
     //Constructor
-    public EmpleadoModelo(int id, String tipo_documemto, String identificacion, String primer_nombre,
-            String segundo_nombre, String primer_apellido, String segundo_apellido, String area_empleado,
-            String estado_empleado) {
+    
+    public EmpleadoModelo() {
+    }
+
+    public EmpleadoModelo(int id, int id_cargo_empleado, String tipo_documemto, String identificacion,
+            String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido,
+            String area_empleado, String estado_empleado) {
         this.id = id;
+        this.id_cargo_empleado = id_cargo_empleado;
         this.tipo_documemto = tipo_documemto;
         this.identificacion = identificacion;
         this.primer_nombre = primer_nombre;
@@ -35,10 +41,6 @@ public class EmpleadoModelo {
         this.segundo_apellido = segundo_apellido;
         this.area_empleado = area_empleado;
         this.estado_empleado = estado_empleado;
-    }
-    
-    
-    public EmpleadoModelo() {
     }
 
 
@@ -113,6 +115,14 @@ public class EmpleadoModelo {
 
     public void setEstado_empleado(String estado_empleado) {
         this.estado_empleado = estado_empleado;
+    }
+
+    public int getId_cargo_empleado() {
+        return id_cargo_empleado;
+    }
+
+    public void setId_cargo_empleado(int id_cargo_empleado) {
+        this.id_cargo_empleado = id_cargo_empleado;
     }
 
     
