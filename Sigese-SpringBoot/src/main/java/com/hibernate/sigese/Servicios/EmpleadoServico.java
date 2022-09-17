@@ -71,4 +71,20 @@ public class EmpleadoServico {
         session.close();
     }
 
+    //Eliminar empleados
+    public String delete(int id) {
+        Session session = createSession();
+        EmpleadoModelo empleado = session.find(EmpleadoModelo.class, id);
+        deleteService(empleado);
+        session.close();
+        return "Mascota eliminada con exito";
+    }
+
+    public void deleteService(EmpleadoModelo empleado) {
+        Session session = createSession();
+        session.remove(empleado);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }
