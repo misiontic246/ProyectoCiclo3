@@ -62,5 +62,13 @@ public class EmpleadoServico {
         session.close();
         return objEmpleado;
     }
+    //Actualizar datos de empleado
+    public void update(EmpleadoModelo empleado) {
+        Session session = createSession();
+        // Realizar actualizacion de la BD
+        session.merge(empleado);
+        session.getTransaction().commit();
+        session.close();
+    }
 
 }
