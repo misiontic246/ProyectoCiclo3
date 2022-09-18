@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +46,20 @@ public class CargoEmpleadoControlador {
     public String create(@RequestBody CargoEmpleadoModelo cargo) {
         return servicio.create(cargo);
     }
-
+    
+    //Llamar metodo para la actualizacion de cargo de empleado
+    @PutMapping
+    //Dar permisos de dominio CrossOrigin
+    @CrossOrigin("*")
+    public String update(@RequestBody CargoEmpleadoModelo cargo) {
+        String message = "";
+        try {
+            servicio.update(cargo);
+            message = "Cargo actualizado con exito";
+        } catch (Exception e) {
+            message = e.getMessage();
+        }
+        return message;
+    }
 
 }

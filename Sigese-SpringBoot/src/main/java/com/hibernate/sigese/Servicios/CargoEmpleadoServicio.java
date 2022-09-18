@@ -47,5 +47,14 @@ public class CargoEmpleadoServicio {
         session.close();
         return message;
     }
+    
+    //Metodo de actualizacion de cargo empleado
+    public void update(CargoEmpleadoModelo cargo) {
+        Session session = createSession();
+        // Realizar actualizacion de la BD
+        session.merge(cargo);
+        session.getTransaction().commit();
+        session.close();
+    }
 
 }
