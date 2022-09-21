@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sigese</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/formulario.css">
     <!-- Cargar bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
@@ -14,42 +14,105 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 
 </head>
-<header>
 
-</header>
-<main>
-    <div>
-        <img src="./img/logo-login.png" alt="" class="logo_upt">
-    </div>
+<body class="color">
+    <header>
+        <div>
+            <img src="./img/logo-login.png" alt="" class="logo_upt">
+        </div>
 
-    <div>
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="empleados.html">Gestion de Empleados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Nuevo Empleado</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link ">Registro Entrada Salida</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link ">Registro Entrada Salida</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link ">Informe Horas </a>
-            </li>
-        </ul>
-    </div>
-</main>
-<footer>
+        <div>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="empleados.html">Gestion de Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nuevo Empleado</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ">Registro Entrada Salida</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ">Registro Entrada Salida</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ">Informe Horas </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section id="section-from">
+            <form onsubmit="get_data_from(event)" class="mb-3" id="from">
+                <fieldset>
+                    <legend>Informacion de formulario</legend>
+                    <!-- Id de cargo   -->
+                    <label for="id_cargo_empleado" class="form-label">Id de cargo de empleado:</label>
+                    <select class="form-control" type="number" id="id_cargo_empleado" name="id_cargo_empleado">
+                    <option name="id_cargo_empleado" selected>1</option>
+                    <option name="id_cargo_empleado" >2</option>
+                    <option name="id_cargo_empleado">3</option>
+                    <option name="id_cargo_empleado">4</option>
+                    </select>
+                    <!-- Tipo de documento  -->
+                    <label for="tipo_documento" class="form-label">Tipo de Documento: </label>
+                    <select class="form-control" type="text" id="tipo_documento" name="tipo_documento" placeholder="Seleccione tio de documento">
+                    <option name="tipo_documento">Tarjeta de identidad </option>
+                    <option name="tipo_documento" selected>Cédula de ciudadanía</option>
+                    <option name="tipo_documento">Tarjeta de extranjería</option>
+                    <option name="tipo_documento">Cédula de extranjería</option>
+                    </select>
+                    <br />
+                    <!-- Numero Documento  -->
+                    <label for="identificacion" class="form-label">Numero Documento: </label>
+                    <input class="form-control" type="text" id="identificacion" name="identificacion" placeholder="Digite el numero de documento del empleado">
+                    <br />
+                    <!-- Primer Nombre  -->
+                    <label for="primer_nombre" class="form-label">Primer Nombre: </label>
+                    <input class="form-control" type="text" id="primer_nombre" name="primer_nombre" placeholder="Digite primer nombre del empleado">
+                    <br />
+                    <!-- Segundo Nombre  -->
+                    <label for="segundo_nombre" class="form-label">Segundo Nombre: </label>
+                    <input class="form-control" type="text" id="segundo_nombre" name="segundo_nombre" placeholder="Digite segundo nombre del empleado">
+                    <br />
+                    <!-- Primer Apellido -->
+                    <label for="primer_apellido" class="form-label">Primer Apellido: </label>
+                    <input class="form-control" type="text" id="primer_apellido" name="primer_apellido" placeholder="Digite primer apellido del empleado ">
+                    <br />
+                    <!-- Segundo Apellido -->
+                    <label for="Segundo_apellido" class="form-label">Segundo Apellido: </label>
+                    <input class="form-control" type="text" id="segundo_apellido" name="segundo_apellido" placeholder="Digite segundo apellido del empleado ">
+                    <br />
+                    <!-- Area de Empleado -->
+                    <label for="area_empleado" class="form-label">Area Empleado: </label>
+                    <input class="form-control" type="text" id="area_empleado" name="are|" placeholder="Digite el area del empleado">
+                    <br />
+                    <!--Estado del Empleado -->
+                    <label for="estado_empleado" class="form-label">Estado Empleado: </label>
+                    <select class="form-control" type="text" id="estado_empleado" name="estado_empleado" placeholder="Seleccione estado empleado">
+                    <option name="estado_empleado" selected>Activo</option>
+                    <option name="estado_empleado">Inactivo</option>
+                    </select>
+                    <br/>
+                    <div class="btn-center">
+                        <!-- Boton -->
+                        <button class="btn btn-outline-primary " type="submit" id="btn-from">Registrar</button>
+                    </div>
+                </fieldset>
+            </form>
 
-</footer>
+        </section>
+    </main>
 
-<body>
+    <footer>
+
+    </footer>
+
+    <!-- Cargar scripts -->
+    <script src="./scripst/formulario.js"></script>
 
 </body>
 

@@ -1,0 +1,30 @@
+.logo_upt {
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 100px;
+}
+
+.color {
+    background-color: aquamarine;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#section-from form {
+    width: 350px;
+}
+
+#section-from {
+    padding-left: 35%;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+}

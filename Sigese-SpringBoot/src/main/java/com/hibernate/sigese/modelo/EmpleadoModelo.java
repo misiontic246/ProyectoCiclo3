@@ -14,7 +14,7 @@ public class EmpleadoModelo {
     @Id
     private int id;
     private int id_cargo_empleado;
-    private String tipo_documemto;
+    private String tipo_documento;
     private String identificacion;
     private String primer_nombre;
     private String segundo_nombre;
@@ -28,12 +28,12 @@ public class EmpleadoModelo {
     public EmpleadoModelo() {
     }
 
-    public EmpleadoModelo(int id, int id_cargo_empleado, String tipo_documemto, String identificacion,
+    public EmpleadoModelo(int id, int id_cargo_empleado, String tipo_documento, String identificacion,
             String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido,
             String area_empleado, String estado_empleado) {
         this.id = id;
         this.id_cargo_empleado = id_cargo_empleado;
-        this.tipo_documemto = tipo_documemto;
+        this.tipo_documento = tipo_documento;
         this.identificacion = identificacion;
         this.primer_nombre = primer_nombre;
         this.segundo_nombre = segundo_nombre;
@@ -53,12 +53,12 @@ public class EmpleadoModelo {
         this.id = id;
     }
 
-    public String getTipo_documemto() {
-        return tipo_documemto;
+    public String getTipo_documento() {
+        return tipo_documento;
     }
 
-    public void setTipo_documemto(String tipo_documemto) {
-        this.tipo_documemto = tipo_documemto;
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
     }
 
     public String getIdentificacion() {

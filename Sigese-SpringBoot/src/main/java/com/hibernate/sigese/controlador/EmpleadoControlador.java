@@ -54,6 +54,8 @@ public class EmpleadoControlador {
     }
     //Crear empleado
     @PostMapping
+    //Dar permisos de dominio CrossOrigin
+    @CrossOrigin("*")
     public String create(@RequestBody EmpleadoModelo empleado) {
         return servicio.create(empleado);
     }

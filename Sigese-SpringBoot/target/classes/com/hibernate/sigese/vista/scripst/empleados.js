@@ -18,7 +18,7 @@ function listar_empleados(empleados) {
         <tr>
             <td>${obj.id}</td>
             <td>${obj.id_cargo_empleado}</td>
-            <td>${obj.tipo_documemto}</td>
+            <td>${obj.tipo_documento}</td>
             <td>${obj.identificacion}</td>
             <td>${obj.primer_nombre}</td>
             <td>${obj.segundo_nombre}</td>
