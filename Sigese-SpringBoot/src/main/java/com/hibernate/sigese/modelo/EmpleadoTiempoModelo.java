@@ -16,7 +16,7 @@ public class EmpleadoTiempoModelo {
     private Date fecha;
     private Time hora_entrada;
     private Time hora_salida;
-
+  
     //Constructor
     public EmpleadoTiempoModelo(int id, Date fecha, Time hora_entrada, Time hora_salida) {
         this.id = id;
@@ -24,6 +24,10 @@ public class EmpleadoTiempoModelo {
         this.hora_entrada = hora_entrada;
         this.hora_salida = hora_salida;
     }
+    
+    public EmpleadoTiempoModelo() {
+    }
+
 
     //Consultores y modificadores
     public int getId() {

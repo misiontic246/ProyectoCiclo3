@@ -28,6 +28,8 @@ public class EmpleadoControlador {
     }
     //Traer lista de empleados en un objeto JSON
     @GetMapping
+    //Dar permisos de dominio CrossOrigin
+    @CrossOrigin("*")
     public List<EmpleadoModelo> getList() {
         List<EmpleadoModelo> empleados = new ArrayList<>();
         try {
@@ -39,6 +41,8 @@ public class EmpleadoControlador {
     }
     //Obtener empleados por id
     @GetMapping("/{id}")
+    //Dar permisos de dominio CrossOrigin
+    @CrossOrigin("*")
     public EmpleadoModelo redaById(@PathVariable(name = "id") int id) {
         EmpleadoModelo empleado = new EmpleadoModelo();
         try {

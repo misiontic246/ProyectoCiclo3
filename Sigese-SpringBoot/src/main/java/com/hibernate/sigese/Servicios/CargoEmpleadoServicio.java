@@ -57,4 +57,20 @@ public class CargoEmpleadoServicio {
         session.close();
     }
 
+    //Metodo para eliminar cargo de empleado
+    public String delete(int id) {
+        Session session = createSession();
+        CargoEmpleadoModelo cargo = session.find(CargoEmpleadoModelo.class, id);
+        deleteService(cargo);
+        session.close();
+        return "Cargo eliminado con exito";
+    }
+
+    public void deleteService(CargoEmpleadoModelo cargo) {
+        Session session = createSession();
+        session.remove(cargo);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }
