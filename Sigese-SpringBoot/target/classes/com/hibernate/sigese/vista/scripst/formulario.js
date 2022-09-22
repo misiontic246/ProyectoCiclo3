@@ -16,6 +16,7 @@ function get_data_from(event) {
         estado_empleado: from.estado_empleado.value
     }
     create(empleado);
+    clear(from);
 
 }
 
@@ -31,4 +32,16 @@ async function create(empleado) {
 
     const text = await resp.text();
     alert(text);
+}
+
+function clear(form) {
+    form.id_cargo_empleado.value = '';
+    form.tipo_documento.value = '';
+    form.identificacion.value = '';
+    form.primer_nombre.value = '';
+    form.segundo_nombre.value = '';
+    form.primer_apellido.value = '';
+    form.segundo_apellido.value = '';
+    form.area_empleado.value = '';
+    from.estado_empleado.value = '';
 }
