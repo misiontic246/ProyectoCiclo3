@@ -1,4 +1,8 @@
 const URL_API = "http://localhost:8080/empleados";
+let update_data = {
+    update: false,
+    id: null
+};
 
 function get_data_from(event) {
     //Indicar que no recargue pagina
@@ -15,9 +19,28 @@ function get_data_from(event) {
         area_empleado: form.area_empleado.value,
         estado_empleado: from.estado_empleado.value
     }
-    create(empleado);
-    clear(from);
 
+    if (update_data.update) {
+        empleado.id = update_data.id;
+        update_empleado(empleado);
+    } else {
+        create(empleado);
+        clear(from);
+    }
+}
+
+async function update_empleado(empleado) {
+    //Enviar peticion
+    const resp = await fetch(URL_API, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(empleado)
+    });
+    const text = await resp.text();
+    alert(text);
+    window.location.href = "empleados.html"
 }
 
 async function create(empleado) {
@@ -66,6 +89,11 @@ function get_params() {
         const empleado = JSON.parse(param_empleado);
         const form = document.getElementById("from");
         set_from(from, empleado);
+        update_data.update = true;
+        update_data.id = empleado.id;
+        document.getElementById("btn-from").innerText = "Actualizar Empleado";
+        document.getElementById("link-create").innerText = "Actualizar Empleado";
+
     }
 
     console.log(empleado);
