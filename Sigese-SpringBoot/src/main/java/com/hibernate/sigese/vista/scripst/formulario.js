@@ -45,3 +45,30 @@ function clear(form) {
     form.area_empleado.value = '';
     from.estado_empleado.value = '';
 }
+
+function set_from(form, empleado) {
+    form.id_cargo_empleado.value = empleado.id_cargo_empleado;
+    form.tipo_documento.value = empleado.tipo_documento;
+    form.identificacion.value = empleado.identificacion;
+    form.primer_nombre.value = empleado.primer_nombre;
+    form.segundo_nombre.value = empleado.segundo_nombre;
+    form.primer_apellido.value = empleado.primer_apellido;
+    form.segundo_apellido.value = empleado.segundo_apellido;
+    form.area_empleado.value = empleado.area_empleado;
+    from.estado_empleado.value = empleado.estado_empleado;
+}
+
+function get_params() {
+    const search = window.location.search;
+    const url = new URLSearchParams(search);
+    const param_empleado = url.get("empleado");
+    if (param_empleado) {
+        const empleado = JSON.parse(param_empleado);
+        const form = document.getElementById("from");
+        set_from(from, empleado);
+    }
+
+    console.log(empleado);
+}
+
+get_params();

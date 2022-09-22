@@ -27,7 +27,7 @@ function listar_empleados(empleados) {
             <td>${obj.area_empleado}</td>
             <td>${obj.estado_empleado}</td>
             <td>
-            <button class = "btn btn-warning" >Actualizar</button>
+            <button class = "btn btn-warning" onclick = 'update(${JSON.stringify(obj)})' >Actualizar</button>
             &nbsp;
             <button class = "btn btn-danger" >Eliminar</button> 
             </td>
@@ -37,6 +37,10 @@ function listar_empleados(empleados) {
     tbody.innerHTML = tr_body;
 }
 
+function update(empleado) {
+    window.location.href = `formulario.html?empleado=${JSON.stringify(empleado)} `;
+
+}
 
 async function main() {
     const empleados = await get_empleados();
