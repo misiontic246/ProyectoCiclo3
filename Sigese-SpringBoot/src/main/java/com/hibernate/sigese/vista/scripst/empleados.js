@@ -27,9 +27,9 @@ function listar_empleados(empleados) {
             <td>${obj.area_empleado}</td>
             <td>${obj.estado_empleado}</td>
             <td>
-            <button class = "btn btn-warning" onclick = 'update(${JSON.stringify(obj)})' >Actualizar</button>
+            <button class = "btn btn-warning" onclick = 'update(${JSON.stringify(obj)})'>Actualizar</button>
             &nbsp;
-            <button class = "btn btn-danger" >Eliminar</button> 
+            <button class = "btn btn-danger" onclick = delete_empleado(${obj.id})>Eliminar</button> 
             </td>
         </tr>
         `
@@ -40,6 +40,16 @@ function listar_empleados(empleados) {
 function update(empleado) {
     window.location.href = `formulario.html?empleado=${JSON.stringify(empleado)} `;
 
+}
+
+async function delete_empleado(id) {
+    //Enviar peticion
+    const resp = await fetch(`${URL_API}/${id}`, {
+        method: 'DELETE'
+    });
+    const text = await resp.text();
+    alert(text);
+    main();
 }
 
 async function main() {
