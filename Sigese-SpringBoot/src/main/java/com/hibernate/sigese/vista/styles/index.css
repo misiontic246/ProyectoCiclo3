@@ -1,15 +1,14 @@
-.logo_upt {
-    display: block;
-    margin: auto;
-    width: 200px;
-    height: 100px;
+.logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logos img {
+    max-width: 20%;
 }
 
 h2 {
     text-align: center;
     margin-top: 50px;
-}
-
-.color {
-    background-color: aquamarine;
 }

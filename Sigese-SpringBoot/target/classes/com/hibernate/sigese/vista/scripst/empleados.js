@@ -17,13 +17,9 @@ function listar_empleados(empleados) {
         tr_body += `
         <tr>
             <td>${obj.id}</td>
-            <td>${obj.id_cargo_empleado}</td>
             <td>${obj.tipo_documento}</td>
             <td>${obj.identificacion}</td>
-            <td>${obj.primer_nombre}</td>
-            <td>${obj.segundo_nombre}</td>
-            <td>${obj.primer_apellido}</td>
-            <td>${obj.segundo_apellido}</td>
+            <td>${obj.primer_nombre} ${obj.segundo_nombre} ${obj.primer_apellido} ${obj.segundo_apellido}</td>
             <td>${obj.area_empleado}</td>
             <td>${obj.estado_empleado}</td>
             <td>

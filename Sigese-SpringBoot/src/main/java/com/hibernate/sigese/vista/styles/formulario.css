@@ -1,12 +1,11 @@
-.logo_upt {
-    display: block;
-    margin: auto;
-    width: 200px;
-    height: 100px;
+.logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.color {
-    background-color: aquamarine;
+.logos img {
+    max-width: 20%;
 }
 
 h2 {
@@ -27,4 +26,8 @@ h2 {
 .btn-center {
     display: flex;
     justify-content: center;
+}
+
+.centrar-texto {
+    text-align: center;
 }
