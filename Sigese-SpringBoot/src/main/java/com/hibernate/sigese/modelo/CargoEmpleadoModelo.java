@@ -2,6 +2,7 @@ package com.hibernate.sigese.modelo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -10,24 +11,23 @@ public class CargoEmpleadoModelo {
     
     //Creando atributos para la base de datos
     @Id
-    private int id;
+    private int id_cargo_empleado;
     private String cargo_empleado;
 
-    //Constructor
-    public CargoEmpleadoModelo(int id, String cargo_empleado) {
-        this.id = id;
+    public CargoEmpleadoModelo(int id_cargo_empleado, String cargo_empleado) {
+        this.id_cargo_empleado = id_cargo_empleado;
         this.cargo_empleado = cargo_empleado;
     }
+
     public CargoEmpleadoModelo() {
     }
 
-    //Consultores y modificadores
-    public int getId() {
-        return id;
+    public int getId_cargo_empleado() {
+        return id_cargo_empleado;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_cargo_empleado(int id_cargo_empleado) {
+        this.id_cargo_empleado = id_cargo_empleado;
     }
 
     public String getCargo_empleado() {

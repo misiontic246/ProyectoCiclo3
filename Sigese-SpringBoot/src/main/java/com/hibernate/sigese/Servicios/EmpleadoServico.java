@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.hibernate.sigese.modelo.CargoEmpleadoModelo;
 import com.hibernate.sigese.modelo.EmpleadoModelo;
 
 public class EmpleadoServico {
@@ -16,6 +17,7 @@ public class EmpleadoServico {
         factory = new Configuration()
                 .configure("cfg.xml")
                 .addAnnotatedClass(EmpleadoModelo.class)
+                .addAnnotatedClass(CargoEmpleadoModelo.class)
                 .buildSessionFactory();
     }
     

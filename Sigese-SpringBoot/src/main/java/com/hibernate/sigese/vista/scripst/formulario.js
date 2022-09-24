@@ -9,7 +9,7 @@ function get_data_from(event) {
     event.preventDefault();
     const form = event.target;
     const empleado = {
-        id_cargo_empleado: form.id_cargo_empleado.value,
+        cargo_empleado: { id_cargo_empleado: form.id_cargo_empleado.value },
         tipo_documento: form.tipo_documento.value,
         identificacion: form.identificacion.value,
         primer_nombre: form.primer_nombre.value,
@@ -70,7 +70,7 @@ function clear(form) {
 }
 
 function set_from(form, empleado) {
-    form.id_cargo_empleado.value = empleado.id_cargo_empleado;
+    form.id_cargo_empleado.value = empleado.cargo_empleado.id_cargo_empleado;
     form.tipo_documento.value = empleado.tipo_documento;
     form.identificacion.value = empleado.identificacion;
     form.primer_nombre.value = empleado.primer_nombre;
