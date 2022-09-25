@@ -1,8 +1,7 @@
 package com.hibernate.sigese.modelo;
+import java.sql.Timestamp;
 
-import java.sql.Date;
-import java.sql.Time;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -13,23 +12,26 @@ public class EmpleadoTiempoModelo {
     //Creando atributos para la base de datos
     @Id
     private int id;
-    private Date fecha;
-    private Time hora_entrada;
-    private Time hora_salida;
-  
-    //Constructor
-    public EmpleadoTiempoModelo(int id, Date fecha, Time hora_entrada, Time hora_salida) {
-        this.id = id;
-        this.fecha = fecha;
-        this.hora_entrada = hora_entrada;
-        this.hora_salida = hora_salida;
-    }
+    private int id_empleado;
+    private Timestamp fecha_entrada;
+    private Timestamp fecha_salida;
+    private Timestamp created;
+
     
     public EmpleadoTiempoModelo() {
     }
 
+    public EmpleadoTiempoModelo(int id, int id_empleado, Timestamp fecha_entrada, Timestamp fecha_salida,
+            Timestamp created) {
+        this.id = id;
+        this.id_empleado = id_empleado;
+        this.fecha_entrada = fecha_entrada;
+        this.fecha_salida = fecha_salida;
+        this.created = created;
+    }
 
-    //Consultores y modificadores
+    
+
     public int getId() {
         return id;
     }
@@ -38,29 +40,38 @@ public class EmpleadoTiempoModelo {
         this.id = id;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public int getId_empleado() {
+        return id_empleado;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setId_empleado(int id_empleado) {
+        this.id_empleado = id_empleado;
     }
 
-    public Time getHora_entrada() {
-        return hora_entrada;
+    public Timestamp getFecha_entrada() {
+        return fecha_entrada;
     }
 
-    public void setHora_entrada(Time hora_entrada) {
-        this.hora_entrada = hora_entrada;
+    public void setFecha_entrada(Timestamp fecha_entrada) {
+        this.fecha_entrada = fecha_entrada;
     }
 
-    public Time getHora_salida() {
-        return hora_salida;
+    public Timestamp getFecha_salida() {
+        return fecha_salida;
     }
 
-    public void setHora_salida(Time hora_salida) {
-        this.hora_salida = hora_salida;
+    public void setFecha_salida(Timestamp fecha_salida) {
+        this.fecha_salida = fecha_salida;
+    }
+
+    public Timestamp getCreated() {
+        return created;
+    }
+
+    public void setCreated(Timestamp created) {
+        this.created = created;
     }
 
 
+    
 }

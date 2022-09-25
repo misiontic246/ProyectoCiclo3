@@ -34,6 +34,7 @@ public class EmpleadoServico {
         session.close();
         return empleados;
     }
+    
     //Buscar empleado por id
     public EmpleadoModelo redaById(int id) throws Exception {
         Session session = createSession();
