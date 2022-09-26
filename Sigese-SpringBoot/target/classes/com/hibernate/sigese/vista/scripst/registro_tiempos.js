@@ -22,7 +22,12 @@ async function create_tiempo(tiempo) {
     });
 
     const text = await resp.text();
-    alert(text);
+    if (text == "Valide su identificacion") {
+        alert(text);
+    } else {
+        const text_2 = "Hora registrada correctamente"
+        alert(text_2);
+    }
 }
 
 function clear(form) {

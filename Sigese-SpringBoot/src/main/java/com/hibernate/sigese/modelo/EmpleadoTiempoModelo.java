@@ -1,5 +1,8 @@
 package com.hibernate.sigese.modelo;
+import java.sql.Date;
 import java.sql.Timestamp;
+
+import javax.xml.crypto.Data;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,14 +18,14 @@ public class EmpleadoTiempoModelo {
     private int id_empleado;
     private Timestamp fecha_entrada;
     private Timestamp fecha_salida;
-    private Timestamp created;
+    private Date created;
 
     
     public EmpleadoTiempoModelo() {
     }
 
     public EmpleadoTiempoModelo(int id, int id_empleado, Timestamp fecha_entrada, Timestamp fecha_salida,
-            Timestamp created) {
+            Date created) {
         this.id = id;
         this.id_empleado = id_empleado;
         this.fecha_entrada = fecha_entrada;
@@ -64,11 +67,11 @@ public class EmpleadoTiempoModelo {
         this.fecha_salida = fecha_salida;
     }
 
-    public Timestamp getCreated() {
+    public Date getCreated() {
         return created;
     }
 
-    public void setCreated(Timestamp created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 

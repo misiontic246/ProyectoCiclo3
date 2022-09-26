@@ -68,19 +68,5 @@ public class EmpleadoTiempoControlador {
         
     }
 
-    //Registrar tiempo de salida de empleado
-    @PutMapping
-    //Dar permisos de dominio CrossOrigin
-    @CrossOrigin("*")
-    public String update(@RequestBody Object tiempo_empleado) {
-        String message = "";
-        try {
-            servicio.update(tiempo_empleado);
-            message = "Hora de salida creada con exito";
-        } catch (Exception e) {
-            message = e.getMessage();
-        }
-        return message;
-    }
 
 }

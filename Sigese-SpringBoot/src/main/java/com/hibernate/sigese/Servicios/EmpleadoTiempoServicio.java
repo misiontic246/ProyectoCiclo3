@@ -66,11 +66,12 @@ public class EmpleadoTiempoServicio {
             .setParameter("id_empleado", empleado.getId())
             .uniqueResult();
         Timestamp fecha = new Timestamp(System.currentTimeMillis());
+        Date created = new Date(System.currentTimeMillis());
         if(empleado_tiempo == null){
             EmpleadoTiempoModelo empleado_tiempo_n = new EmpleadoTiempoModelo();
             empleado_tiempo_n.setFecha_entrada(fecha);
             empleado_tiempo_n.setId_empleado(empleado.getId());
-            empleado_tiempo_n.setCreated(fecha);
+            empleado_tiempo_n.setCreated(created);
             session.merge(empleado_tiempo_n);
             session.getTransaction().commit();
             session.close();
@@ -84,14 +85,5 @@ public class EmpleadoTiempoServicio {
         return empleado_tiempo;
     }
 
-    // Registro de tiempo de salida de tiempo de trabajo de empleado
-    public void update(Object empleado) {
-        System.out.print(empleado);
-        Session session = createSession();
-        // Realizar actualizacion de la BD
-        session.merge(empleado);
-        session.getTransaction().commit();
-        session.close();
-    }
 
 }
