@@ -15,8 +15,8 @@
     border-top: 4px solid #017bab;
     border-radius: 30px;
     color: white;
-
 }
+
 .form-registro {
     width: 700px;
     height: 140px;
@@ -28,9 +28,9 @@
     border-top: 4px solid brown;
     border-radius: 30px;
     color: white;
-
 }
-.mibutton{
+
+.mibutton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,11 +44,11 @@
     border-bottom: 1px solid;
     font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
     color: brown;
     text-decoration-style: solid 20px;
 }
-#lb-cc{
+
+#lb-cc {
     color: brown;
     font-size: 18px;
 }
@@ -63,18 +63,18 @@
     text-decoration: underline;
 }
 
-.logos1 img{
+.logos1 img {
     margin: 50px;
     width: 300px;
     height: 200px;
     right: 500px;
     top: 100px;
 }
-.btn.btn-primary{
+
+.btn.btn-primary {
     --bs-btn-bg: brown;
-    
-}
-h6{
-    text-align: center;
 }
 
+h6 {
+    text-align: center;
+}

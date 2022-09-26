@@ -2,6 +2,8 @@ package com.hibernate.sigese.modelo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 //Crear anotacion para la creacion de la tabla en la base de datos
@@ -13,7 +15,9 @@ public class EmpleadoModelo {
     //Creando el id para la base de datos
     @Id
     private int id;
-    private int id_cargo_empleado;
+    @ManyToOne
+    @JoinColumn(name = "id_cargo_empleado")
+    private CargoEmpleadoModelo cargo_empleado;
     private String tipo_documento;
     private String identificacion;
     private String primer_nombre;
@@ -28,11 +32,11 @@ public class EmpleadoModelo {
     public EmpleadoModelo() {
     }
 
-    public EmpleadoModelo(int id, int id_cargo_empleado, String tipo_documento, String identificacion,
+    public EmpleadoModelo(int id, CargoEmpleadoModelo cargo_empleado, String tipo_documento, String identificacion,
             String primer_nombre, String segundo_nombre, String primer_apellido, String segundo_apellido,
             String area_empleado, String estado_empleado) {
         this.id = id;
-        this.id_cargo_empleado = id_cargo_empleado;
+        this.cargo_empleado = cargo_empleado;
         this.tipo_documento = tipo_documento;
         this.identificacion = identificacion;
         this.primer_nombre = primer_nombre;
@@ -43,14 +47,20 @@ public class EmpleadoModelo {
         this.estado_empleado = estado_empleado;
     }
 
-
-    //Consultores y modificadores
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public CargoEmpleadoModelo getCargo_empleado() {
+        return cargo_empleado;
+    }
+
+    public void setCargo_empleado(CargoEmpleadoModelo cargo_empleado) {
+        this.cargo_empleado = cargo_empleado;
     }
 
     public String getTipo_documento() {
@@ -117,17 +127,5 @@ public class EmpleadoModelo {
         this.estado_empleado = estado_empleado;
     }
 
-    public int getId_cargo_empleado() {
-        return id_cargo_empleado;
-    }
-
-    public void setId_cargo_empleado(int id_cargo_empleado) {
-        this.id_cargo_empleado = id_cargo_empleado;
-    }
-
     
-
-    
-    
-
 }
