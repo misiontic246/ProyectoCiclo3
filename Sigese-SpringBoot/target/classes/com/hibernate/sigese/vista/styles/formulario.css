@@ -11,14 +11,16 @@
 h2 {
     text-align: center;
     margin-top: 50px;
+    color: brown;
+    text-decoration-style: solid 20px;
 }
 
-#section-from form {
+#section-from from {
     width: 350px;
 }
 
 #section-from {
-    padding-left: 35%;
+    display: flex;
     justify-content: center;
     padding-top: 25px;
 }
