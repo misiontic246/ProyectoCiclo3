@@ -15,64 +15,39 @@
 
 </head>
 
-<body class="color">
+<body>
     <header>
-
+        <iframe src="header.html" frameborder="0" scrolling="no"></iframe>
     </header>
+    <br><br><br><br><br><br><br><br><br><br><br>
     <main>
-        <div class="logos">
-            <img src="./img/logo-login.png" alt="" class="logo_upt">
-            <img src="./img/LogoSigese.png" alt="" class="logo_sigese">
-        </div>
+        <section id="section-table">
+            <h2>
+                Empleados Registrados
+            </h2>
+            <table class="table table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Tipo Documento</td>
+                        <td>Identificación</td>
+                        <td>Nombres</td>
+                        <td>Área Empleado</td>
+                        <td>Estado Empleado</td>
+                        <td>Acciones</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
 
-        <div>
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Gestion de Empleados</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="formulario.html">Nuevo Empleado</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ">Registro Entrada Salida</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ">Informe Horas </a>
-                </li>
-            </ul>
-        </div>
+                </tbody>
+
+        </section>
+
     </main>
-    <section id="section-table">
-        <h2>
-            Empleados Registrados
-        </h2>
-        <table class="table table-bordered border-primary">
-            <thead>
-                <tr>
-                    <td>Id</td>
-                    <td>Tipo Documento</td>
-                    <td>Identificacion</td>
-                    <td>Nombres</td>
-                    <td>Area Empleado</td>
-                    <td>Estado Empleado</td>
-                    <td>Acciones</td>
-                </tr>
-            </thead>
-            <tbody id="tbody">
 
-            </tbody>
-    </section>
-    <footer>
 
-    </footer>
-    <!-- Cargar scripts -->
     <script src="./scripst/empleados.js"></script>
-
-
-
 </body>
+
 
 </html>
