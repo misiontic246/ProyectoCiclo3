@@ -19,7 +19,7 @@ function get_data_from(event) {
         area_empleado: form.area_empleado.value,
         estado_empleado: from.estado_empleado.value
     }
-
+    console.log(empleado);
     if (update_data.update) {
         empleado.id = update_data.id;
         update_empleado(empleado);

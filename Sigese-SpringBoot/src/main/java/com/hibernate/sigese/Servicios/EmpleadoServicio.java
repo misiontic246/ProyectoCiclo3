@@ -9,10 +9,10 @@ import org.hibernate.cfg.Configuration;
 import com.hibernate.sigese.modelo.CargoEmpleadoModelo;
 import com.hibernate.sigese.modelo.EmpleadoModelo;
 
-public class EmpleadoServico {
+public class EmpleadoServicio {
     //Atributos
     SessionFactory factory;
-    public EmpleadoServico() {
+    public EmpleadoServicio() {
         // Crear objeto fabrica de session
         factory = new Configuration()
                 .configure("cfg.xml")

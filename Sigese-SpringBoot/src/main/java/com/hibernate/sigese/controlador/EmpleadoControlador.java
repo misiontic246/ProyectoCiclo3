@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hibernate.sigese.Servicios.EmpleadoServico;
+import com.hibernate.sigese.Servicios.EmpleadoServicio;
 import com.hibernate.sigese.modelo.EmpleadoModelo;
 
 @RestController
 @RequestMapping("/empleados")
 public class EmpleadoControlador {
     //Atributos
-    private EmpleadoServico servicio;
+    private EmpleadoServicio servicio;
 
     public EmpleadoControlador() {
-        this.servicio = new EmpleadoServico();
+        this.servicio = new EmpleadoServicio();
     }
     //Traer lista de empleados en un objeto JSON
     @GetMapping

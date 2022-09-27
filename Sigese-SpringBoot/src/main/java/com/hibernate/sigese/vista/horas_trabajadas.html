@@ -23,27 +23,36 @@
     <main>
         <section id="section-table">
             <h2>
-                Horas Trabajadas por dia
+                Informe de Horas Trabajadas
             </h2>
+            </br>
+            <form action="" onsubmit="get_date_from(event)" class="mb-3" id="from">
+
+                <label for="start">Fecha Inicio:</label>
+                <input type="date" id="fecha_1" name="fecha_1" value="">
+                <label for="start">Fecha Final:</label>
+                <input type="date" id="fecha_2" name="fecha_2" value="">
+                <!-- Boton -->
+                <button class="btn btn-outline-primary " type="submit" id="btn-from">Consultar Registros</button>
+
+            </form>
+            </br>
             <table class="table table-bordered border-primary">
                 <thead>
                     <tr class="text-center">
                         <td>Identificación</td>
                         <td>Nombre Empleado</td>
-                        <td>Cargo Empleado</td>
                         <td>Fecha Regristro</td>
                         <td>Horas Trabajadas</td>
                     </tr>
                 </thead>
-                <tbody id="tbody">
-
+                <tbody id="tbody" class="text-center">
                 </tbody>
-
         </section>
 
     </main>
 
-    <!-- <script src="./scripst/empleados.js"></script> -->
+    <script src="./scripst/informe_horas.js"></script>
 </body>
 
 
