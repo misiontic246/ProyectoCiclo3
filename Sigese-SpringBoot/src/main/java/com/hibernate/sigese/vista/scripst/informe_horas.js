@@ -30,6 +30,7 @@ function listar_horas_empleados(horas_empleados) {
 }
 
 async function main() {
+
     const horas_empleados = await get_horas();
     listar_horas_empleados(horas_empleados);
 }
