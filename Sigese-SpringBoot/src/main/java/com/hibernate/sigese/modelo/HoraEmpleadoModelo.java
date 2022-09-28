@@ -1,8 +1,5 @@
 package com.hibernate.sigese.modelo;
-
 import java.sql.Date;
-import java.sql.Time;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
