@@ -112,6 +112,4 @@ public class HoraEmpleadoModelo {
         this.horas_trabajadas = horas_trabajadas;
     }
 
-    
-
 }

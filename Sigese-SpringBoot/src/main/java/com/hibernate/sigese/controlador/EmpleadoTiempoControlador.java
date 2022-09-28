@@ -1,6 +1,9 @@
 package com.hibernate.sigese.controlador;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -58,7 +61,7 @@ public class EmpleadoTiempoControlador {
         try {
             return servicio.create(registro_empleado);
         } catch (Exception e) {
-            return e.getMessage();
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
         }
         
     }

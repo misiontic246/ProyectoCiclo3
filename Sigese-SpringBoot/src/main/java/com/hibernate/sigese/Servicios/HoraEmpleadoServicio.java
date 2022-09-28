@@ -1,13 +1,11 @@
 package com.hibernate.sigese.Servicios;
-
 import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.transform.Transformers;
+
 import com.hibernate.sigese.modelo.HoraEmpleadoModelo;
 
 public class HoraEmpleadoServicio {
@@ -52,13 +50,12 @@ public class HoraEmpleadoServicio {
     public List<HoraEmpleadoModelo> getByDateRange(Date fecha_1, Date fecha_2) throws Exception {
         Session session = createSession();
         List<HoraEmpleadoModelo> objFecha = session
-                .createQuery(
-                        "from HoraEmpleadoModelo where fecha_registro between :fecha_1 and :fecha_2",
-                        HoraEmpleadoModelo.class)
+                .createNativeQuery(
+                        " select id, tipo_documento, identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, fecha_registro, sum(horas_trabajadas) as horas_trabajadas from horas_trabajadas  where fecha_registro between :fecha_1 and :fecha_2 group by id", HoraEmpleadoModelo.class)
                 .setParameter("fecha_1", fecha_1)
                 .setParameter("fecha_2", fecha_2)
                 .list();
-        session.close();
+        session.close();        
         return objFecha;
     }
 
