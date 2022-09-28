@@ -1,8 +1,5 @@
 package com.hibernate.sigese.modelo;
-
 import java.sql.Date;
-import java.sql.Time;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -111,7 +108,5 @@ public class HoraEmpleadoModelo {
     public void setHoras_trabajadas(float horas_trabajadas) {
         this.horas_trabajadas = horas_trabajadas;
     }
-
-    
 
 }

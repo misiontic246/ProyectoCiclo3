@@ -21,16 +21,24 @@ async function create_tiempo(tiempo) {
         body: JSON.stringify(tiempo)
     });
 
-    const text = await resp.text();
-    if (text == "Valide su identificacion") {
-        alert(text);
+    let text = "";
+    if (resp.status == 200) {
+        json = await resp.json();
+        console.log(json);
+        if (json.fecha_salida == null) {
+            text = "Turno Abierto: " + json.fecha_entrada;
+        } else {
+            text = "Turno Cerrado: " + json.fecha_salida;
+        }
     } else {
-        const text_2 = "Hora registrada correctamente"
-        alert(text_2);
+        text = "Identificacion Invalida"
     }
+    const myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {})
+    element = document.getElementById("exampleModalContent");
+    element.innerHTML = text;
+    myModal.show();
 }
 
 function clear(form) {
     form.identificacion.value = '';
-
 }
