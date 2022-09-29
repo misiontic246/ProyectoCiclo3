@@ -34,9 +34,10 @@ CREATE TABLE `empleados` (
   `area_empleado` varchar(60) CHARACTER SET latin1 DEFAULT NULL,
   `estado_empleado` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_cargo_idx` (`id_cargo_empleado`),
-  CONSTRAINT `id_cargo` FOREIGN KEY (`id_cargo_empleado`) REFERENCES `cargos_empleados` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `identificacion_UNIQUE` (`identificacion`),
+  KEY `id_cargo_empleado_idx` (`id_cargo_empleado`),
+  CONSTRAINT `id_cargo_empleado` FOREIGN KEY (`id_cargo_empleado`) REFERENCES `cargos_empleados` (`id_cargo_empleado`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +46,7 @@ CREATE TABLE `empleados` (
 
 LOCK TABLES `empleados` WRITE;
 /*!40000 ALTER TABLE `empleados` DISABLE KEYS */;
-INSERT INTO `empleados` VALUES (1,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Operativa','Inactivo'),(3,2,'Cédula de ciudadanía','1333311','Santiago','Fernando','Vera','Velasquez','Operativa','Activo'),(4,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Operativa','Activo'),(6,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Operativa','Activo'),(7,1,'Tarjeta de extranjería','1121871159','Edison','Fernando','Vera','Corredor','Operativa','Activo'),(8,1,'Tarjeta de extranjería','1121871159','Edison','Fernando','Vera','Corredor','Operativa','Activo'),(9,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Operativa','Activo'),(10,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Operativa','Activo'),(11,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Hseq','Activo'),(12,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Hseq','Activo'),(13,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Hseq','Activo'),(21,1,'Cédula de ciudadanía','1121871159','Edison','Fernando','Vera','Corredor','Hseq','Activo'),(22,3,'Cédula de ciudadanía','111217545','Javier','Fernando','Sanchez','Vargas','Hseq','Inactivo');
+INSERT INTO `empleados` VALUES (27,4,'Cédula de ciudadanía','1','Edison','Fernando','Vera','Corredor','Operativo','Activo'),(29,1,'Tarjeta de identidad','2','Alvaro','Andres','Castillo','Hernandez','Operativo','Activo'),(30,1,'Tarjeta de identidad','3','Xiomara','Erika','Sanchez','Zuares','Operativo','Activo'),(31,1,'Cédula de ciudadanía','4','Wimar','Andres','Ruiz','Espitia','Operativo','Activo'),(36,4,'Cédula de ciudadanía','5','Juan','Felipe','Hernandez','Rojas','Operativo','Activo'),(37,2,'Tarjeta de identidad','6','Eider','salinas','salinas','salinas','Administrativo','Activo'),(38,2,'Cédula de ciudadanía','7','Diego','Mauricio','Tovar','Pascuas','Operativo','Activo'),(39,1,'Tarjeta de identidad','','','','','','Operativo','Activo');
 /*!40000 ALTER TABLE `empleados` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-22 21:16:50
+-- Dump completed on 2022-09-28 19:54:07

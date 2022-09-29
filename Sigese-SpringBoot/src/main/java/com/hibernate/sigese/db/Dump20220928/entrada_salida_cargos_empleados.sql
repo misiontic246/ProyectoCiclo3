@@ -23,9 +23,9 @@ DROP TABLE IF EXISTS `cargos_empleados`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cargos_empleados` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cargo_empleado` int(11) NOT NULL AUTO_INCREMENT,
   `cargo_empleado` varchar(60) CHARACTER SET latin1 DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id_cargo_empleado`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -35,7 +35,7 @@ CREATE TABLE `cargos_empleados` (
 
 LOCK TABLES `cargos_empleados` WRITE;
 /*!40000 ALTER TABLE `cargos_empleados` DISABLE KEYS */;
-INSERT INTO `cargos_empleados` VALUES (1,'Supervisor'),(2,'Coordinador'),(3,'Inspector '),(4,'Director');
+INSERT INTO `cargos_empleados` VALUES (1,'Operario'),(2,'Ventas'),(3,'Bodega'),(4,'Contabilidad');
 /*!40000 ALTER TABLE `cargos_empleados` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-22 21:16:50
+-- Dump completed on 2022-09-28 19:54:07
