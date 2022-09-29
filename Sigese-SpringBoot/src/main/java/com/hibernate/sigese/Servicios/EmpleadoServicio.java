@@ -2,6 +2,8 @@ package com.hibernate.sigese.Servicios;
 
 import java.util.List;
 
+import javax.print.attribute.standard.NumberUp;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -57,13 +59,13 @@ public class EmpleadoServicio {
         return message;
     }
     //Buscar empleado por numero de documento
-    public List<EmpleadoModelo> getByIdent(String identificacion ) throws Exception {
+    public List<EmpleadoModelo> getByIdent(String identificacion) throws Exception {
         Session session = createSession();
-        List<EmpleadoModelo> objEmpleado = session
+        List<EmpleadoModelo> Empleado = session
                 .createQuery("from EmpleadoModelo where identificacion = :ident", EmpleadoModelo.class)
                 .setParameter("ident", identificacion).list();
         session.close();
-        return objEmpleado;
+        return Empleado;
     }
     //Actualizar datos de empleado
     public void update(EmpleadoModelo empleado) {

@@ -20,7 +20,6 @@ async function create_tiempo(tiempo) {
         },
         body: JSON.stringify(tiempo)
     });
-
     let text = "";
     if (resp.status == 200) {
         json = await resp.json();

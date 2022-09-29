@@ -50,7 +50,7 @@ public class EmpleadoTiempoServicio {
     }
 
     // Crear registro de tiempo de empleados
-    public Object create(RegistroEmpleado ident) throws Exception {
+    public Object create_registro(RegistroEmpleado ident) throws Exception {
         Session session = createSession();
             EmpleadoModelo empleado = session
                     .createQuery("from EmpleadoModelo as e where e.identificacion =: ident ",

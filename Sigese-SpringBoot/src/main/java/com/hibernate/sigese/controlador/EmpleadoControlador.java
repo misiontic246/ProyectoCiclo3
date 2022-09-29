@@ -72,7 +72,6 @@ public class EmpleadoControlador {
             e.printStackTrace();
         }
         return empleado;
-        // return mascotas;
     }
     
     //Actualizar empleado

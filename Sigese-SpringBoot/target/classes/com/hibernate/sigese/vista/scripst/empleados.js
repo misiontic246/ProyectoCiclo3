@@ -7,9 +7,9 @@ async function get_empleados(identificacion = null) {
         param = new URLSearchParams({ identificacion: identificacion })
         url = url + param;
     }
-
     //Enviar petición
     const resp = await fetch(url);
+    console.log(resp);
     //Obtener datos de la peticion
     const empleados = await resp.json();
     return empleados;
@@ -59,13 +59,25 @@ async function filtro_identificacion_empleados(event) {
     event.preventDefault();
     const form = event.target;
     const empleados = await get_empleados(form.identificacion.value);
+    //console.log(empleados);
+    let text = "";
+    if (empleados.length == 0) {
+        text = "Identificación no encontrada";
+    } else {
+        text = "Empleado encontrado con exito"
+    }
+
+    const myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {})
+    element = document.getElementById("exampleModalContent");
+    element.innerHTML = text;
+    myModal.show();
     listar_empleados(empleados);
 
 }
 
 async function main() {
-    const empleados = await get_empleados();
-    listar_empleados(empleados);
+    filtro_identificacion_empleados();
+
 }
 
 main();

@@ -57,9 +57,9 @@ public class EmpleadoTiempoControlador {
     @PostMapping
     //Dar permisos de dominio CrossOrigin
     @CrossOrigin("*")
-    public Object create(@RequestBody  RegistroEmpleado registro_empleado) {
+    public Object create_registro(@RequestBody  RegistroEmpleado registro_empleado) {
         try {
-            return servicio.create(registro_empleado);
+            return servicio.create_registro(registro_empleado);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(),HttpStatus.NOT_FOUND);
         }
