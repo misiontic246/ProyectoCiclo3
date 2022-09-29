@@ -61,7 +61,7 @@ public class EmpleadoControlador {
     }
 
     //Buscar empleado por identificacion
-    @GetMapping("/fullident")
+    @GetMapping("/ident")
     //Dar permisos de dominio CrossOrigin
     @CrossOrigin("*")
     public List<EmpleadoModelo> getByIdent(@RequestParam String identificacion) {

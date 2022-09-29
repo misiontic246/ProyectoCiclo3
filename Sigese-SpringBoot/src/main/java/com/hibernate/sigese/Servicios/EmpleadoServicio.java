@@ -80,7 +80,7 @@ public class EmpleadoServicio {
         EmpleadoModelo empleado = session.find(EmpleadoModelo.class, id);
         deleteService(empleado);
         session.close();
-        return "Mascota eliminada con exito";
+        return "Empleado eliminado con exito";
     }
 
     public void deleteService(EmpleadoModelo empleado) {

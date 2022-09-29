@@ -8,9 +8,7 @@ async function get_horas(fecha_1 = null, fecha_2 = null) {
     if (fecha_1 != null && fecha_2 != null) {
         param = new URLSearchParams({ fecha_1: fecha_1, fecha_2: fecha_2 })
         url = url + param;
-
     }
-    console.log(url);
     //Enviar petición
     const resp = await fetch(url);
     //Obtener datos de la peticion
@@ -33,7 +31,6 @@ function listar_horas_empleados(horas_empleados) {
         </tr>
         `
     }
-    console.log(tr_body);
     tbody.innerHTML = tr_body;
 }
 

@@ -1,8 +1,15 @@
-const URL_API = "http://localhost:8080/empleados";
+const URL_API_DELETE = "http://localhost:8080/empleados";
+const URL_API = "http://localhost:8080/empleados/ident?";
 
-async function get_empleados() {
+async function get_empleados(identificacion = null) {
+    url = URL_API;
+    if (identificacion != null) {
+        param = new URLSearchParams({ identificacion: identificacion })
+        url = url + param;
+    }
+
     //Enviar petición
-    const resp = await fetch(URL_API);
+    const resp = await fetch(url);
     //Obtener datos de la peticion
     const empleados = await resp.json();
     return empleados;
@@ -40,12 +47,20 @@ function update(empleado) {
 
 async function delete_empleado(id) {
     //Enviar peticion
-    const resp = await fetch(`${URL_API}/${id}`, {
+    const resp = await fetch(`${URL_API_DELETE}/${id}`, {
         method: 'DELETE'
     });
     const text = await resp.text();
     alert(text);
     main();
+}
+
+async function filtro_identificacion_empleados(event) {
+    event.preventDefault();
+    const form = event.target;
+    const empleados = await get_empleados(form.identificacion.value);
+    listar_empleados(empleados);
+
 }
 
 async function main() {
