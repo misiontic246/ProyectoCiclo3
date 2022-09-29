@@ -14,17 +14,31 @@ h2 {
     margin-top: 50px;
 }
 
-footer {
-    display: flex-column;
-    align-items: flex-start;
-    justify-content: content-between;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: #C82127;
-    width: 100%;
-    position: absolute;
-    padding: 15em;
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
 
+.footer {
+    background-color: #e22323;
+    height: 100%;
+    /*Siempre es necesario cuando trabajamos con alturas*/
+    position: absolute;
+    /*El div será ubicado con relación a la pantalla*/
+    left: 0px;
+    /*A la derecha deje un espacio de 0px*/
+    right: 0px;
+    /*A la izquierda deje un espacio de 0px*/
+    bottom: 0px;
+    /*Abajo deje un espacio de 0px*/
+    height: 50px;
+    /*alto del div*/
+    z-index: 0;
+}
+
+.copy {
+    background-color: rgba(180, 54, 54, 0.74);
 }
 
 header {
@@ -52,7 +66,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .nav-pills,
@@ -75,5 +88,4 @@ a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    
 }

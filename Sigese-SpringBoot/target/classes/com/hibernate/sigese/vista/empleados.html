@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <section class=" container">
-        <div class="logos">
+    <div class=" container">
 
+        <div class="logos">
             <img src="./img/logo-login.png" alt="" class="logo_upt"><br>
             <img src="./img/LogoSigese.png" alt="" class="logo_sigese">
         </div>
@@ -43,12 +43,13 @@
                 </ul>
             </nav>
         </header>
-    </section>
+    </div>
     </br>
-    <main class="container">
-        <section id="section-table">
+
+    <div class="contenedor">
+        <main>
             <h2>
-                Empleados Registrados
+                Busqueda de Empleados
             </h2>
             <form action="" onsubmit="filtro_identificacion_empleados(event)" class="mb-3" id="from">
                 <label>Busqueda por Identificación:</label>
@@ -74,15 +75,19 @@
                 </thead>
                 <tbody class="text-center" id="tbody">
                 </tbody>
-        </section>
-    </main>
 
-
-    <!-- <footer class="footer">
-            <p>Contáctenos: </p>
-            <p>ventas@sigese.com.co</p>
-            <p>Copyright 2022</p>
-        </footer> -->
+        </main>
+    </div>
+    <div class="contenedor footer">
+        <footer class="text-center text-lg-start">
+            <div class=" d-flex justify-content-center py-1">
+                <p>Contáctenos: ventas@sigese.com.co </p>
+            </div>
+            <div class="text-center text-white p-1 copy">
+                <p>© 2022 Copyright:</p>
+            </div>
+        </footer>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
