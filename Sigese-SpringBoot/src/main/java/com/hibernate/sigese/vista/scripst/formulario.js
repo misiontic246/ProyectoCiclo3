@@ -39,8 +39,10 @@ async function update_empleado(empleado) {
         body: JSON.stringify(empleado)
     });
     const text = await resp.text();
-    alert(text);
-    window.location.href = "empleados.html"
+    const myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {})
+    element = document.getElementById("exampleModalContent");
+    element.innerHTML = text;
+    myModal.show();
 }
 
 async function create(empleado) {
@@ -54,7 +56,10 @@ async function create(empleado) {
     });
 
     const text = await resp.text();
-    alert(text);
+    const myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {})
+    element = document.getElementById("exampleModalContent");
+    element.innerHTML = text;
+    myModal.show()
 }
 
 function clear(form) {

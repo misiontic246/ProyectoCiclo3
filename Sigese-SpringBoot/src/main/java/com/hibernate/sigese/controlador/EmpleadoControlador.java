@@ -82,7 +82,7 @@ public class EmpleadoControlador {
         String message = "";
         try {
             servicio.update(empleado);
-            message = "Mascota actualizada con exito";
+            message = "Empleado actualizado con exito";
         } catch (Exception e) {
             message = e.getMessage();
         }

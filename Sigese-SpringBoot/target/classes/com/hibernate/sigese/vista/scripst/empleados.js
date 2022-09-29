@@ -51,7 +51,10 @@ async function delete_empleado(id) {
         method: 'DELETE'
     });
     const text = await resp.text();
-    alert(text);
+    const myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {})
+    element = document.getElementById("exampleModalContent");
+    element.innerHTML = text;
+    myModal.show();
     main();
 }
 
@@ -66,7 +69,6 @@ async function filtro_identificacion_empleados(event) {
     } else {
         text = "Empleado encontrado con exito"
     }
-
     const myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {})
     element = document.getElementById("exampleModalContent");
     element.innerHTML = text;
@@ -77,6 +79,7 @@ async function filtro_identificacion_empleados(event) {
 
 async function main() {
     filtro_identificacion_empleados();
+
 
 }
 
