@@ -25,9 +25,9 @@ async function create_tiempo(tiempo) {
         json = await resp.json();
         console.log(json);
         if (json.fecha_salida == null) {
-            text = "Turno Abierto: " + json.fecha_entrada;
+            text = "Turno Abierto: " + Date(json.fecha_entrada);
         } else {
-            text = "Turno Cerrado: " + json.fecha_salida;
+            text = "Turno Cerrado: " + Date(json.fecha_salida);
         }
     } else {
         text = "Identificacion Invalida"
